@@ -18,8 +18,8 @@ public class Pizzas {
 
     // Tamaño de pizza
     public static final int PEQUENA = 0;
-    public static final int MEDIANA = 2;
-    public static final int GRANDE = 3;
+    public static final int MEDIANA = 1;
+    public static final int GRANDE = 2;
 
     // Recogida
 
