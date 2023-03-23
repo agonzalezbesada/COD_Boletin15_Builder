@@ -55,7 +55,7 @@ public class Pizzas {
      * @param jamon Si lleva jamón o no
      * @param recogida Cómo la recibirá el cliente
      */
-    Pizzas(int masa, int size, boolean relleno, boolean salsa, boolean cebolla, boolean sinGluten, boolean pina, boolean champinones, boolean jamon, int recogida) {
+    public Pizzas(int masa, int size, boolean relleno, boolean salsa, boolean cebolla, boolean sinGluten, boolean pina, boolean champinones, boolean jamon, int recogida) {
         this.masa = masa;
         this.size = size;
         this.relleno = relleno;
