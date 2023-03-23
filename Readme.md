@@ -24,7 +24,7 @@ classDiagram
         
     class BuilderPizzas{
     -_pizza : Pizzas
-    +build() : _pizza
+    +build() _pizza
     +setMasa(masa : int) this
     +setSize(size : int) this
     +setRelleno(relleno : boolean) this
