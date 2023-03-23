@@ -21,6 +21,20 @@ classDiagram
     +pizza3 : Pizzas
     +main()
     }
+        
+    class BuilderPizzas{
+    -_pizza : Pizzas
+    +build() : _pizza
+    +setMasa(masa : int) this
+    +setSize(size : int) this
+    +setRelleno(relleno : boolean) this
+    +setSalsa(salsa : boolean) this
+    +setCebolla(cebolla : boolean) this
+    +setSinGluten(sinGluten : boolean) this
+    +setChampinones(champinones : boolean) this
+    +setJamon(jamon : boolean) this
+    +setRecogida(recogida : int) this
+    }
     
     class Pizzas{
     -masa : int = 0
@@ -35,22 +49,7 @@ classDiagram
     -recogida : int = 0
     +Pizzas()
     +Pizzas(masa : int,size : int,relleno : boolean,cebolla : boolean,sinGluten : boolean,pina : boolean,champinones : boolean,jamon : boolean,recogida : int)
-    +toString() : String
-    }
-    
-    class BuilderPizzas{
-    -_pizza : Pizzas
-    +build() : _pizza
-    +setMasa(masa : int) : this
-    +setSize(size : int) : this
-    +setRelleno(relleno : boolean) : this
-    +setSalsa(salsa : boolean) : this
-    +setCebolla(cebolla : boolean) : this
-    +setSinGluten(sinGluten : boolean) : this
-    +setChampinones(champinones : boolean) : this
-    +setJamon(jamon : boolean) : this
-    +setRecogida(recogida : int) : this
-    
+    +toString() String
     }
     
     Main "1" *-- "1..*" BuilderPizzas : association
