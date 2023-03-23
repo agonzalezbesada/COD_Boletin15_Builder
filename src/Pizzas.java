@@ -12,7 +12,7 @@ public class Pizzas {
     private int recogida;
 
     // Tipo de masa
-    public static final int NORMAL= 1;
+    public static final int NORMAL= 0;
     public static final int FINA= 1;
     public static final int PAN = 2;
 
@@ -151,6 +151,9 @@ public class Pizzas {
 
     @Override
     public String toString() {
+        if (pina) {
+            System.out.println("Eres un criminal por pedirla con piña.");
+        }
         return "Pizza: " +
                 "masa=" + masa +
                 ", size=" + size +
