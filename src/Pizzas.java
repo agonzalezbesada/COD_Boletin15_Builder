@@ -26,6 +26,9 @@ public class Pizzas {
     public static final int TIENDA = 0;
     public static final int PARALLEVAR = 1;
 
+    /**
+     * Construcción predeterminada
+     */
     public Pizzas() {
         this.masa = NORMAL;
         this.size = MEDIANA;
@@ -39,6 +42,19 @@ public class Pizzas {
         this.recogida = TIENDA;
     }
 
+    /**
+     * Construcción personalizada
+     * @param masa Tipo de masa
+     * @param size Tamaño de la pizza
+     * @param relleno Tipo de relleno
+     * @param salsa Si lleva salsa o no
+     * @param cebolla Si lleva Cebolla o no
+     * @param sinGluten Si lleva gluten o no
+     * @param pina Si lleva piña o no
+     * @param champinones Si lleva champiñones o no
+     * @param jamon Si lleva jamón o no
+     * @param recogida Cómo la recibirá el cliente
+     */
     Pizzas(int masa, int size, boolean relleno, boolean salsa, boolean cebolla, boolean sinGluten, boolean pina, boolean champinones, boolean jamon, int recogida) {
         this.masa = masa;
         this.size = size;
@@ -52,6 +68,7 @@ public class Pizzas {
         this.recogida = recogida;
     }
 
+    // Getters y Setters
     public int getMasa() {
         return masa;
     }
