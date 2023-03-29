@@ -2,13 +2,18 @@
 
 ## ¿Cual es la función de este patrón?
 
-Poder crear objetos iguales o muy similares que son necesarios crear repetitivamente ahorrando código, y permitiendo personalizarlos
+Poder crear objetos iguales o muy similares que son necesarios crear repetitivamente ahorrando código, y permitiendo personalizarlos.
 
-## Podríamos combinarlo con el patrón Factory?
+Por ejemplo un Builder que crea un objeto *Mochila*, pero esta mochila puede tener una gran cantidad de atributos, en este caso comprendidos por su aspecto o contenido,
+Para el ejemplo usaremos el contenido. 
 
-Si, podríamos hacer un Factory que dentro de los diferentes tipos de objeto que nos provee,
+Su contenido pueden ser, lapiz, goma ,boligrafo, afilalapiz, papel, libreta, archivador, grapadora...
 
-estos pudiesen ser personalizados mediante el Builder
+Existen muchos tipos diferentes de mochila resultantes de esto.
+
+Y si quisiesemos crear nosotros ese objeto, tendríamos que especificar gran cantidad de valores para
+sus atributos. Aquí es donde entra el Factory, nos permite crear estos objetos, *Mochila* de manera muy sencilla
+y pudiendo personalizarlos muy fácilmente.
 
 ---
 Diagrama de clases
@@ -16,44 +21,43 @@ Diagrama de clases
 ```mermaid
 classDiagram
     class Main{
-    +pizza1 : Pizzas
-    +pizza2 : Pizzas
-    +pizza3 : Pizzas
+    +mochila1 : Mochila
     +main()
     }
         
-    class BuilderPizzas{
-    -_pizza : Pizzas
-    +build() _pizza
-    +setMasa(masa : int) this
-    +setSize(size : int) this
-    +setRelleno(relleno : boolean) this
-    +setSalsa(salsa : boolean) this
-    +setCebolla(cebolla : boolean) this
-    +setSinGluten(sinGluten : boolean) this
-    +setChampinones(champinones : boolean) this
-    +setJamon(jamon : boolean) this
-    +setRecogida(recogida : int) this
+    class BuilderMochilas{
+    -_mochila : Mochilas
+    +build() _mochila
+    +setLapiz(lapiz : boolean) this
+    +setGoma(goma : boolean) this
+    +setBoligrafo(boligrafo : boolean) this
+    +setAfilalapiz(afilalapiz : boolean) this
+    +setPapel(papel : boolean) this
+    +setLibreta(libreta : boolean) this
+    +setArchivador(archivador : boolean) this
+    +setGrapadora(grapadora : boolean) this
     }
     
-    class Pizzas{
-    -masa : int = 0
-    -size : int = 1
-    -relleno : boolean = false
-    -salsa : boolean = false
-    -cebolla : boolean = false
-    -sinGluten : boolean = false
-    -pina : boolean = false
-    -champinones : boolean = false
-    -jamon : boolean = true
-    -recogida : int = 0
-    +Pizzas()
-    +Pizzas(masa : int,size : int,relleno : boolean,cebolla : boolean,sinGluten : boolean,pina : boolean,champinones : boolean,jamon : boolean,recogida : int)
+    class Mochila{
+    -lapiz : boolean = true
+    -goma : boolean = true
+    -boligrfo : boolean = true
+    -afilalapiz : boolean = false
+    -papel : boolean = true
+    -libreta : boolean = true
+    -Archivador : boolean = false
+    -Grapadora : boolean = false
+    +Mochilas()
+    +Mochilas(lapiz : boolean,goma : boolean,boligrafo : boolean,afilalapiz : boolean,papel : boolean,libreta : boolean,archivador : boolean,grapadora : boolean)
     +toString() String
     }
     
-    Main "1" *-- "1..*" BuilderPizzas : association
-    BuilderPizzas "1" *-- "1" Pizzas : association
+    Main "1" *-- "1..*" BuilderMochilas : association
+    BuilderMochilas "1" *-- "1" Mochila : association
 ```
+## Podríamos combinarlo con el patrón Factory?
 
+Si, podríamos hacer un Factory que dentro de los diferentes tipos de objeto que nos provee,
+
+estos pudiesen ser personalizados mediante el Builder
 
