@@ -127,13 +127,9 @@ classDiagram
     Main "1" *-- "1..*" FactoryObjetos : association
     FactoryObjetos "1" *-- "1" BuilderMochilas
     FactoryObjetos "1" *-- "1" BuilderUniformes
-    BuilderMochilas "1" *-- "1 Mochilas
-    BuilderUniformes "1" *-- "1 Uniformes
-    Clase "1" *-- "1 Mochilas : implements
-    Clase "1" *-- "1 Uniformes : implements
-    
-    
-
-
+    BuilderMochilas "1" *-- "1" Mochilas
+    BuilderUniformes "1" *-- "1" Uniformes
+    Clase "1" *-- "1" Mochilas : implements
+    Clase "1" *-- "1" Uniformes : implements
 
 ````
