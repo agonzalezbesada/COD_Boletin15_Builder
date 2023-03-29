@@ -75,7 +75,7 @@ classDiagram
     +toBuilder() (Generalidad)
     }
     
-    calss BuilderMochilas{
+    class BuilderMochilas{
     +_mochila : Mochilas
     +build() _mochila
     +setLapiz(lapiz : boolean) this
@@ -119,6 +119,20 @@ classDiagram
     -camiseta : boolean = true
     -zapatos : boolean = true
     }
+    
+    class Clase{
+    +detalles()
+    }
+    
+    Main "1" *-- "1..*" FactoryObjetos : association
+    FactoryObjetos "1" *-- "1" BuilderMochilas
+    FactoryObjetos "1" *-- "1" BuilderUniformes
+    BuilderMochilas "1" *-- "1 Mochilas
+    BuilderUniformes "1" *-- "1 Uniformes
+    Clase "1" *-- "1 Mochilas : implements
+    Clase "1" *-- "1 Uniformes : implements
+    
+    
 
 
 
